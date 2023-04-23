@@ -1,27 +1,28 @@
-# TÍTULO DO PROJETO
+# InvestFlow
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Eixo 1 - Projeto: Desenvolvimento de Aplicação Web Front-End - Turma 13 - 2023/1`
 
-`SEMESTRE`
+`1º Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Aplicativo de finanças que auxilia os investidores a monitorar seus investimentos e se manter informados sobre o desempenho do mercado financeiro, oferecendo uma plataforma que possa contribuir na tomada de decisões de investimentos mais seguras. A construção de um aplicativo de finanças surge como uma solução para ajudar investidores brasileiros a se manterem informados sobre o mercado financeiro e a tomarem decisões mais informadas. Com o crescimento do mercado financeiro no Brasil e o aumento do uso de celulares para acessar serviços financeiros, há uma demanda crescente por soluções tecnológicas que possam atender às necessidades dos investidores. Além disso, com o avanço da tecnologia, a construção de aplicativos de finanças tornou-se mais acessível, permitindo que pequenas empresas e startups possam criar soluções inovadoras para atender a essa demanda. De acordo com o estudo "FintechLab 2020", realizado pela Conexão Fintech, o Brasil já conta com mais de 1.000 fintechs ativas, demonstrando a força do setor no país. Dessa forma, a construção de um aplicativo de finanças pode ser uma oportunidade promissora para atender à crescente demanda de investidores brasileiros por ferramentas que possam ajudá-los a monitorar seus investimentos e se manterem informados sobre o mercado financeiro.
+
+
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Gabriel Rodrigues dos Santos Silva
+* Luca da Rocha Trece
+* Murilo Henrique Souza Ignácio 
 
-## Orientador
+## Orientador(a)
 
-* Nome completo do professor 1
+* Nathalia Assis Valentim
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Assim que a primeira versão do sistema estiver disponível, estarão disponíveis as instruções de utilização, dependências e como executar a aplicação.
 
 # Documentação
 
@@ -41,7 +42,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+* Assim que a primeira versão do sistema estiver disponível, estará disponível a URL da hospedagem
 
 # Armazenamento do Código-Fonte
 
