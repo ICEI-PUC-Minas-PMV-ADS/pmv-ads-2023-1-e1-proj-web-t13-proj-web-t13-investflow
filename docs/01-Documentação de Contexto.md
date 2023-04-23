@@ -1,46 +1,54 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Acompanhar ativos financeiros é uma prática essencial para quem busca se tornar um investidor de sucesso. Ao monitorar de perto as variações do mercado financeiro, é possível tomar decisões mais acertadas e, assim, maximizar os lucros e minimizar os riscos (Valor Investe, 2019). Além disso, o acompanhamento constante dos ativos financeiros permite ao investidor estar sempre atualizado sobre as tendências do mercado, possibilitando identificar oportunidades de investimento com maior potencial de retorno. Nesse sentido, diversos especialistas no assunto ressaltam a importância do monitoramento do mercado financeiro.
+
+Segundo o site Valor Investe (2019), verificar constantemente os status das aplicações financeiras é fundamental para o sucesso dos investidores. De acordo com o portal Exame (s/d), acompanhar ativos financeiros também é essencial para quem busca investir em renda variável. Isso porque esse tipo de investimento exige um conhecimento mais aprofundado do mercado e uma análise mais detalhada dos ativos. Isso porque a volatilidade do mercado exige uma atenção constante, e somente aqueles que estão sempre atualizados são capazes de identificar as melhores oportunidades de investimento. Além disso, obter essas informações em tempo real é fundamental para quem busca diversificar a carteira de investimentos, de forma a minimizar os riscos e aumentar as chances de sucesso.
+
+Outra fonte que reforça a importância do monitoramento do mercado financeiro é o site do Banco Central do Brasil. De acordo com a instituição, o monitoramento constante dos ativos é uma das principais medidas de segurança que os investidores podem adotar para proteger seus investimentos (Banco Central do Brasil, s/d). Isso porque o mercado financeiro é influenciado por diversos fatores, como crises econômicas, instabilidade política e flutuações cambiais, que podem ter um impacto significativo no valor dos ativos.
+
+Por fim, o site do Tesouro Nacional (s/d), órgão responsável pela gestão da dívida pública federal, destaca a importância da informação para quem busca investir em títulos públicos. De acordo com o site, o mercado de títulos públicos é influenciado por diversos fatores, como a taxa básica de juros, a inflação e a situação fiscal do país. Por isso, o acompanhamento constante dos ativos é fundamental para garantir que o investidor esteja sempre atualizado sobre as mudanças no mercado e, assim, tome as melhores decisões de investimento.
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
+O mercado financeiro é um ambiente dinâmico e complexo, que pode causar muitas incertezas e dúvidas para os investidores.
+ 
+A volatilidade dos preços das ações, as mudanças nas políticas governamentais e a instabilidade econômica podem levar a grandes oscilações nos mercados financeiros, o que pode impactar significativamente a carteira de investimentos de uma pessoa. 
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Nesse cenário, um aplicativo de finanças pode ajudar a manter o controle sobre os investimentos e oferecer informações atualizadas sobre o desempenho do mercado de ações.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Desenvolver um aplicativo de finanças que auxilie os investidores a monitorar seus investimentos e se manterem informados sobre o desempenho do mercado financeiro, oferecendo uma plataforma que possa contribuir na tomada de decisões de investimentos mais seguras.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Objetivos específicos:
+
+* Analisar as necessidades dos investidores em relação a um aplicativo de finanças;
+* Pesquisar as melhores práticas e tecnologias utilizadas no desenvolvimento de aplicativos de finanças;
+* Desenvolver uma interface intuitiva e fácil de usar que permita aos usuários acompanharem seus investimentos e o desempenho do mercado;
+* Implementar ferramentas de análise e que possam ajudar os usuários a tomarem decisões de investimento mais informadas e seguras;
+* Testar e aprimorar continuamente o aplicativo para garantir sua eficácia e usabilidade.
+
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A construção de um aplicativo de finanças surge como uma solução para ajudar investidores brasileiros a se manterem informados sobre o mercado financeiro e a tomarem decisões mais informadas. Com o crescimento do mercado financeiro no Brasil e o aumento do uso de celulares para acessar serviços financeiros, há uma demanda crescente por soluções tecnológicas que possam atender às necessidades dos investidores. Além disso, com o avanço da tecnologia, a construção de aplicativos de finanças tornou-se mais acessível, permitindo que pequenas empresas e startups possam criar soluções inovadoras para atender a essa demanda.
+De acordo com o estudo "FintechLab 2020", realizado pela Conexão Fintech, o Brasil já conta com mais de 1.000 fintechs ativas, demonstrando a força do setor no país. Dessa forma, a construção de um aplicativo de finanças pode ser uma oportunidade promissora para atender à crescente demanda de investidores brasileiros por ferramentas que possam ajudá-los a monitorar seus investimentos e se manterem informados sobre o mercado financeiro.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O aplicativo de finanças seria útil para qualquer pessoa que esteja interessada em investir no mercado de ações, independentemente do nível de conhecimento ou experiência no assunto. 
+Novos investidores podem se sentir sobrecarregados com as informações disponíveis e inseguros sobre como tomar as melhores decisões de investimento. Investidores experientes podem precisar acompanhar notícias e tendências para tomar decisões de compra ou venda em tempo real.
+O problema que levaria uma pessoa a utilizar um aplicativo de finanças ocorre em várias situações, como por exemplo, quando há grandes mudanças no mercado de ações, ou quando a pessoa precisa tomar uma decisão de investimento importante. 
+O aplicativo pode ser utilizado diariamente para acompanhar o desempenho do mercado e monitorar os investimentos, ou em momentos mais críticos, quando a pessoa precisa de informações atualizadas para tomar decisões de investimento estratégicas. 
+O aplicativo pode ser especialmente útil em momentos de crise financeira, quando a pessoa precisa de informações confiáveis e atualizadas para lidar com a instabilidade do mercado.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
 > **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+
+> BANCO CENTRAL DO BRASIL. Como proteger seus investimentos. Disponível em: https://www.bcb.gov.br/cidadaniafinanceira/semana. Acesso em: 01 abr. 2023.
+> EXAME. A importância do acompanhamento dos investimentos em renda variável. Disponível em: https://exame.com/invest/a-importancia-do-acompanhamento-dos-investimentos-em-renda-variavel/. Acesso em: 01 abr. 2023.
+> TESOURO NACIONAL. Investir em títulos públicos. Disponível em: https://www.tesouro.fazenda.gov.br/tesouro-direto-como-investir. Acesso em: 01 abr. 2023.
+> VALOR INVESTE. Por que é importante acompanhar seus investimentos de perto? Disponível em: https://valorinveste.globo.com/objetivo/educacao-financeira/noticia/2019/08/20/por-que-e-importante-acompanhar-seus-investimentos-de-perto.ghtml. Acesso em: 01 abr. 2023.
+> CONEXÃO FINTECH. FintechLab 2020. São Paulo: Conexão Fintech, 2020. Disponível em: https://conteudo.conexaofintech.com.br/fintechlab-2020. Acesso em: 01 abr. 2023.
