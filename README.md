@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# InvestFlow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`Análise e Desenvolvimento de Sistemas`
 
-## Available Scripts
+`Eixo 1 - Projeto: Desenvolvimento de Aplicação Web Front-End - Turma 13 - 2023/1`
 
-In the project directory, you can run:
+`1º Semestre`
 
-### `npm start`
+Aplicativo de finanças que auxilia os investidores a monitorar seus investimentos e se manter informados sobre o desempenho do mercado financeiro, oferecendo uma plataforma que possa contribuir na tomada de decisões de investimentos mais seguras. A construção de um aplicativo de finanças surge como uma solução para ajudar investidores brasileiros a se manterem informados sobre o mercado financeiro e a tomarem decisões mais informadas. Com o crescimento do mercado financeiro no Brasil e o aumento do uso de celulares para acessar serviços financeiros, há uma demanda crescente por soluções tecnológicas que possam atender às necessidades dos investidores. Além disso, com o avanço da tecnologia, a construção de aplicativos de finanças tornou-se mais acessível, permitindo que pequenas empresas e startups possam criar soluções inovadoras para atender a essa demanda. De acordo com o estudo "FintechLab 2020", realizado pela Conexão Fintech, o Brasil já conta com mais de 1.000 fintechs ativas, demonstrando a força do setor no país. Dessa forma, a construção de um aplicativo de finanças pode ser uma oportunidade promissora para atender à crescente demanda de investidores brasileiros por ferramentas que possam ajudá-los a monitorar seus investimentos e se manterem informados sobre o mercado financeiro.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Integrantes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Gabriel Rodrigues dos Santos Silva
+- Luca da Rocha Trece
+- Murilo Henrique Souza Ignácio
 
-### `npm test`
+## Orientador(a)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Nathalia Assis Valentim
 
-### `npm run build`
+## Instruções de utilização
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Visualizar um Gráfico de Linha de Preço de uma Criptomoeda ao Longo do Tempo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/nomedacriptomoeda ou selecione uma criptomoeda em https://investflow.github.io
+  - A tela de detalhes da criptomoeda é exibida pelo aplicativo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Adicionar Ações à Lista de favoritos/watchlist
 
-### `npm run eject`
+  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/favorites ou clique no ícone de favoritos na Navbar.
+  - A tela de criptomoedas favoritas é exibida pelo aplicativo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Página Inicial/Lista de Ativos
+  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/.
+  - A lista de criptomoedas é exibida pelo aplicativo.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Documentação
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<ol>
+<li><a href="docs/01-Documentação de Contexto.md"> Documentação de Contexto</a></li>
+<li><a href="docs/02-Especificação do Projeto.md"> Especificação do Projeto</a></li>
+<li><a href="docs/03-Metodologia.md"> Metodologia</a></li>
+<li><a href="docs/04-Projeto de Interface.md"> Projeto de Interface</a></li>
+<li><a href="docs/05-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
+<li><a href="docs/06-Template padrão do Site.md"> Template padrão do Site</a></li>
+<li><a href="docs/07-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
+<li><a href="docs/08-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
+<li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
+<li><a href="docs/10-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
+<li><a href="docs/11-Referências.md"> Referências</a></li>
+</ol>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Hospedagem
 
-## Learn More
+O site utiliza a plataforma do GitHub Pages como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+https://investflow.github.io
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A publicação do site no GitHub Pages é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
 
-### Code Splitting
+# Armazenamento do Código-Fonte
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- <a href="src/README.md">Código Fonte</a>
 
-### Analyzing the Bundle Size
+# Armazenamento da Apresentação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- <a href="presentation/README.md">Apresentação da solução</a>

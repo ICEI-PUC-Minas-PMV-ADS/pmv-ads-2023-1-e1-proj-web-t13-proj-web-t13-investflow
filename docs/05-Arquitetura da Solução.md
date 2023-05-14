@@ -8,70 +8,66 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 Diagrama que permite a modelagem física de um sistema, através da visão dos seus componentes e relacionamentos entre os mesmos.
 
-Exemplo: 
+Exemplo:
 
-Os componentes que fazem parte da solução são apresentados na Figura XX.
+Os componentes que fazem parte da solução são apresentados na Figura 01.
 
 ![Diagrama de Componentes](img/componentes.png)
-<center>Figura XX - Arquitetura da Solução</center>
+
+<center>Figura 01 - Arquitetura da Solução</center>
 
 A solução implementada conta com os seguintes módulos:
-- **Navegador** - Interface básica do sistema  
-  - **Páginas Web** - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
-   - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON. São eles: 
-     - **Canais** - seções de notícias apresentadas 
-     - **Comentários** - registro de opiniões dos usuários sobre as notícias
-     - **Preferidas** - lista de notícias mantidas para leitura e acesso posterior
- - **News API** - plataforma que permite o acesso às notícias exibidas no site.
- - **Hospedagem** - local na Internet onde as páginas são mantidas e acessadas pelo navegador. 
 
-> **Links Úteis**:
->
-> - [Whimsical](https://whimsical.com/)
+- **Navbar.js** - Este é o componente de navegação superior da aplicação. Ele contém links para as diferentes páginas da aplicação (lista de favoritos, lista de ativos) e também possui um campo de pesquisa que interage com a API CoinGecko para buscar ativos. Além disso, também apresenta botões de Login, Cadastro e alternância de tema.
 
-Inclua um diagrama da solução e descreva os módulos e as tecnologias que fazem parte da solução. Discorra sobre o diagrama.
+- **FavoriteList.js** - Este componente é responsável por exibir a lista de ativos favoritos do usuário. Ele busca os ativos favoritos do local storage do navegador e os exibe em uma tabela. Os usuários podem adicionar ou remover ativos de seus favoritos clicando no ícone de estrela na tabela. Este componente também usa a API CoinGecko para buscar informações atualizadas sobre os ativos.
 
-A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
-que o usuário entra na plataforma, ele é apresentado à tela inicial
-(Tela 1) onde ele é confrontado com as opões de editar seu perfil ou
-então visualizar sua galeria.
+- **AssetList.js** - Este componente é a interface que lista todos os ativos disponíveis. Ele também usa a API CoinGecko para buscar informações sobre os ativos e permite ao usuário adicionar ativos à sua lista de favoritos.
 
-Caso ele opte por seguir pelo primeiro caminho (Editar Perfil), ele é
-redirecionado para a tela de edição de perfil (Tela 2), onde pode
-atualizar seus dados cadastrais. Nessa tela, o usuário também pode
-escolher para editar sua foto de perfil. Ao selecionar essa opção, ele é
-redirecionado para a Tela 3, onde ele a imagem expandida do perfil do
-usuário é mostrado. Ao selecionar a opção para atualizar a imagem, uma
-nova janela abre pedindo para o usuário fazer o upload da nova foto.
-Assim que o processo termina um pop-up exibe o status para o usuário
-(Tela 4) e o usuário é redirecionado para a Tela 2.
+- **AssetDetails.js** - Este componente exibe informações detalhadas sobre um ativo específico selecionado pelo usuário na lista de ativos obtidos através da API CoinGecko.
 
-Caso o usuário opte seguir pelo segundo caminho (Visualizar Galeria) ele
-é redirecionado para a Tela 5 com todas as fotos que o usuário possui. O
-usuário pode clicar em um post qualquer para visualizar os detalhes do
-post (Tela 6). Nessa tela, ele pode então escolher editar o post, sendo
-redirecionado para a Tela 7. Ao editar as informações, o usuário pode
-escolher salvar ou deletar o post. Em ambos os casos o status é
-notificado para o usuário (Tela 8) e em seguida ele é redirecionado
-para a Tela 2.
+- **CoinGeckoAPI.js** - Este módulo é responsável por fazer todas as chamadas para a API CoinGecko. Ele possui funções para buscar a lista de ativos, informações detalhadas de um ativo específico e dados de gráfico de um ativo.
 
-![Exemplo de UserFlow](img/userflow.jpg)
+- **CoinGecko API** - Esta é a API externa usada pela aplicação. Ela fornece informações atualizadas sobre várias criptomoedas (e.g. preços).
 
+- **GitHub Pages** - Este é o serviço de hospedagem onde a aplicação React é publicada e acessada pelos usuários. Ele hospeda os arquivos estáticos (HTML, CSS, JavaScript) gerados pelo aplicativo React.
+
+- **React Application** - Este é o aplicativo React em si, que é composto pelos componentes e módulos listados acima. Ele é hospedado no GitHub Pages e interage com a API CoinGecko para fornecer a funcionalidade desejada aos usuários.
+
+- **Browser Local Storage** - Este é o mecanismo de armazenamento no navegador do usuário. É usado para armazenar dados localmente no navegador do usuário. No contexto desta aplicação, é utilizado para armazenar a lista de ativos favoritos do usuário. O componente FavoriteList.js interage com o Local Storage para ler e escrever a lista de ativos favoritos do usuário. Este armazenamento persiste mesmo após o navegador ser fechado e reaberto, o que permite que a aplicação mantenha o estado dos favoritos do usuário entre diferentes sessões de navegação.
+  >
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+As tecnologias utilizadas no projeto incluem:
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+- **Linguagens** - JavaScript, HTML e CSS.
+- **Bibliotecas e frameworks** - React, Material-UI e Recharts.
+- **Serviços web** - CoinGecko API.
+- **IDE** - Visual Studio Code.
 
+A interação do usuário com o sistema é conduzida por meio de uma aplicação React. A estrutura do projeto inclui diferentes componentes, como AssetList, AssetDetails e FavoritesList, que são renderizados em diferentes rotas da aplicação usando o React Router (BrowserRouter).
+
+Quando o usuário acessa a rota inicial (/), o componente AssetList é renderizado e faz uma requisição à CoinGecko API para obter a lista de ativos. Essa lista é exibida em uma tabela, onde o usuário pode pesquisar por ativos específicos. Além disso, o usuário pode marcar ativos como favoritos clicando no ícone de estrela.
+
+Ao clicar em um ativo na lista, o usuário é direcionado para a rota /asset/:id, onde o componente AssetDetails é renderizado. Esse componente exibe os detalhes do ativo selecionado, incluindo seu nome e um gráfico de linha com dados de preços históricos. Também é possível marcar ou desmarcar o ativo como favorito.
+
+A rota /favorites renderiza o componente FavoritesList, que exibe uma lista dos ativos marcados como favoritos. Essa lista é atualizada automaticamente com base nas seleções feitas nas outras telas.
+
+O componente Navbar é utilizado em todas as rotas e permite ao usuário realizar ações como acessar a lista de favoritos, fazer buscas por ativos e alternar entre os modos de tema claro e escuro.
+
+O usuário interage com a interface do usuário construída com o React e o Material-UI. Quando o usuário realiza uma ação, como pesquisar um ativo ou adicionar um ativo aos favoritos, o estado do componente React é atualizado, causando uma nova renderização da interface do usuário. Se a ação do usuário necessita de dados que não estão atualmente na aplicação, uma solicitação HTTP é feita à API do CoinGecko usando o Axios. Os dados retornados da API são então usados para atualizar o estado do componente React e a interface do usuário é novamente renderizada com os novos dados. Quando o usuário adiciona um ativo aos seus favoritos, a lista de favoritos é armazenada no Local Storage, permitindo que esses dados persistam entre as sessões de navegação. As rotas do aplicativo são gerenciadas pelo React Router, permitindo ao usuário navegar entre diferentes visualizações sem a necessidade de carregar uma nova página.
+
+Em resumo, as tecnologias utilizadas permitem a criação de uma aplicação web interativa que consome dados da CoinGecko API para exibir informações sobre criptoativos, permitindo ao usuário visualizar, pesquisar e favoritar ativos.
+
+O diagrama de interação está disponível na figura 2 abaixo:
+
+![Diagrama de Interação](img/diagrama_interacao.png)
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+O site utiliza a plataforma do GitHub Pages como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+https://investflow.github.io
+
+A publicação do site no GitHub Pages é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
