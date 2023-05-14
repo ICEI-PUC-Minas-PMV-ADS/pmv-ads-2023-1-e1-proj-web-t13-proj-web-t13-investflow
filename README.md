@@ -1,53 +1,70 @@
-# InvestFlow
+# Getting Started with Create React App
 
-`Análise e Desenvolvimento de Sistemas`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-`Eixo 1 - Projeto: Desenvolvimento de Aplicação Web Front-End - Turma 13 - 2023/1`
+## Available Scripts
 
-`1º Semestre`
+In the project directory, you can run:
 
-Aplicativo de finanças que auxilia os investidores a monitorar seus investimentos e se manter informados sobre o desempenho do mercado financeiro, oferecendo uma plataforma que possa contribuir na tomada de decisões de investimentos mais seguras. A construção de um aplicativo de finanças surge como uma solução para ajudar investidores brasileiros a se manterem informados sobre o mercado financeiro e a tomarem decisões mais informadas. Com o crescimento do mercado financeiro no Brasil e o aumento do uso de celulares para acessar serviços financeiros, há uma demanda crescente por soluções tecnológicas que possam atender às necessidades dos investidores. Além disso, com o avanço da tecnologia, a construção de aplicativos de finanças tornou-se mais acessível, permitindo que pequenas empresas e startups possam criar soluções inovadoras para atender a essa demanda. De acordo com o estudo "FintechLab 2020", realizado pela Conexão Fintech, o Brasil já conta com mais de 1.000 fintechs ativas, demonstrando a força do setor no país. Dessa forma, a construção de um aplicativo de finanças pode ser uma oportunidade promissora para atender à crescente demanda de investidores brasileiros por ferramentas que possam ajudá-los a monitorar seus investimentos e se manterem informados sobre o mercado financeiro.
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## Integrantes
+### `npm test`
 
-* Gabriel Rodrigues dos Santos Silva
-* Luca da Rocha Trece
-* Murilo Henrique Souza Ignácio 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Orientador(a)
+### `npm run build`
 
-* Nathalia Assis Valentim
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Instruções de utilização
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Assim que a primeira versão do sistema estiver disponível, estarão disponíveis as instruções de utilização, dependências e como executar a aplicação.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# Documentação
+### `npm run eject`
 
-<ol>
-<li><a href="docs/01-Documentação de Contexto.md"> Documentação de Contexto</a></li>
-<li><a href="docs/02-Especificação do Projeto.md"> Especificação do Projeto</a></li>
-<li><a href="docs/03-Metodologia.md"> Metodologia</a></li>
-<li><a href="docs/04-Projeto de Interface.md"> Projeto de Interface</a></li>
-<li><a href="docs/05-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
-<li><a href="docs/06-Template padrão do Site.md"> Template padrão do Site</a></li>
-<li><a href="docs/07-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
-<li><a href="docs/08-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
-<li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
-<li><a href="docs/10-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
-<li><a href="docs/11-Referências.md"> Referências</a></li>
-</ol>
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-# Hospedagem
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-* Assim que a primeira versão do sistema estiver disponível, estará disponível a URL da hospedagem
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-# Armazenamento do Código-Fonte
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-* <a href="src/README.md">Código Fonte</a>
+## Learn More
 
-# Armazenamento da Apresentação
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-* <a href="presentation/README.md">Apresentação da solução</a>
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
