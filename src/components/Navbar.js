@@ -9,8 +9,10 @@ import {
   InputBase,
   Badge,
   Button,
-  makeStyles,
 } from '@mui/material';
+
+import { makeStyles } from '@mui/styles';
+
 import {
   Favorite,
   Search,

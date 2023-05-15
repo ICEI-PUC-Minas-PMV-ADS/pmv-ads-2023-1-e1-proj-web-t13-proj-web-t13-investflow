@@ -5,9 +5,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AssetList from './components/AssetList';
 import AssetDetails from './components/AssetDetails';
 import FavoritesList from './components/FavoritesList';
+import { ThemeProvider } from '@mui/styles';
+import { createTheme } from '@mui/material';
 
 function App() {
+
+  const theme = createTheme();
+
+  theme.spacing(2);
   return (
+    <ThemeProvider theme={theme}>
     <Router>
       <Routes>
         <Route path="/" element={<AssetList />} />
@@ -15,6 +22,7 @@ function App() {
         <Route path="/favorites" element={<FavoritesList />} />
       </Routes>
     </Router>
+    </ThemeProvider>
   );
 }
 
