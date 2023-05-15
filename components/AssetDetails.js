@@ -13,8 +13,8 @@ import {
 } from 'recharts';
 import CoinGeckoAPI from '../services/CoinGeckoAPI';
 import Navbar from './Navbar';
-import { IconButton } from '@material-ui/core';
-import { Star, StarBorder } from '@material-ui/icons';
+import { IconButton } from '@mui/material';
+import { Star, StarBorder } from '@mui/icons-material';
 
 // This is the custom tooltip component
 const CustomTooltip = ({ active, payload }) => {

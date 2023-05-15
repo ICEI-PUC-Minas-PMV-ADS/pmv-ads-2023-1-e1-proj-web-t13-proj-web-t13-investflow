@@ -14,8 +14,8 @@ import {
   TableRow,
   TableCell,
   IconButton,
-} from '@material-ui/core';
-import { Star, StarBorder } from '@material-ui/icons';
+} from '@mui/material';
+import { Star, StarBorder } from '@mui/icons-material';
 import Navbar from './Navbar';
 
 function FavoritesList() {

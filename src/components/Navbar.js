@@ -10,13 +10,13 @@ import {
   Badge,
   Button,
   makeStyles,
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   Favorite,
   Search,
   Brightness4,
   AccountCircle,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
   loginButton: {
