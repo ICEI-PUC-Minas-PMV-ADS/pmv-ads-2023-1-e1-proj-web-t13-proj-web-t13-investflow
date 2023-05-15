@@ -30,9 +30,9 @@ A solução implementada conta com os seguintes módulos:
 
 - **CoinGecko API** - Esta é a API externa usada pela aplicação. Ela fornece informações atualizadas sobre várias criptomoedas (e.g. preços).
 
-- **GitHub Pages** - Este é o serviço de hospedagem onde a aplicação React é publicada e acessada pelos usuários. Ele hospeda os arquivos estáticos (HTML, CSS, JavaScript) gerados pelo aplicativo React.
+- **Vercel** - Este é o serviço de hospedagem onde a aplicação React é publicada e acessada pelos usuários. Ele hospeda os arquivos estáticos (HTML, CSS, JavaScript) gerados pelo aplicativo React.
 
-- **React Application** - Este é o aplicativo React em si, que é composto pelos componentes e módulos listados acima. Ele é hospedado no GitHub Pages e interage com a API CoinGecko para fornecer a funcionalidade desejada aos usuários.
+- **React Application** - Este é o aplicativo React em si, que é composto pelos componentes e módulos listados acima. Ele é hospedado no Vercel e interage com a API CoinGecko para fornecer a funcionalidade desejada aos usuários.
 
 - **Browser Local Storage** - Este é o mecanismo de armazenamento no navegador do usuário. É usado para armazenar dados localmente no navegador do usuário. No contexto desta aplicação, é utilizado para armazenar a lista de ativos favoritos do usuário. O componente FavoriteList.js interage com o Local Storage para ler e escrever a lista de ativos favoritos do usuário. Este armazenamento persiste mesmo após o navegador ser fechado e reaberto, o que permite que a aplicação mantenha o estado dos favoritos do usuário entre diferentes sessões de navegação.
   >
@@ -66,8 +66,8 @@ O diagrama de interação está disponível na figura 2 abaixo:
 
 ## Hospedagem
 
-O site utiliza a plataforma do GitHub Pages como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
+O site utiliza a plataforma do Vercel como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
 
-https://investflow.github.io
+https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
 
-A publicação do site no GitHub Pages é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
+A publicação do site no Vercel é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
