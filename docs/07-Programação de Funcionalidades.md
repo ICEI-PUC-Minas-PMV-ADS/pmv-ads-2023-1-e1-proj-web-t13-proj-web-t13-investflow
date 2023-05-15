@@ -23,7 +23,7 @@ Nessa tela, são exibidas informações detalhadas sobre um ativo específico se
   - CustomTooltip: Este é um componente personalizado usado para exibir tooltips no gráfico de preços. Ele recebe active e payload como props. active é um booleano que indica se o tooltip está ativo ou não, e payload é um array contendo os dados do ponto de dados atualmente sob o cursor do usuário.
 
 - **Instruções de acesso**:
-  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/nomedacriptomoeda ou selecione uma criptomoeda em https://investflow.github.io
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/nomedacriptomoeda ou selecione uma criptomoeda em https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
   - A tela de detalhes da criptomoeda é exibida pelo aplicativo.
 
 ## Adicionar Ações à Lista de favoritos/watchlist (RF-05)
@@ -47,7 +47,7 @@ Exibe a lista de ativos favoritos do usuário. Ele busca os ativos favoritos do 
   - favoriteAssets: Esta é uma lista derivada que contém apenas os ativos que estão na lista de favoritos do usuário. Ela é calculada filtrando a lista completa de ativos para incluir apenas aqueles cujo id aparece na lista de favoritos.
 
 - **Instruções de acesso**:
-  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/favorites ou clique no ícone de favoritos na Navbar.
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/favorites ou clique no ícone de favoritos na Navbar.
   - A tela de criptomoedas favoritas é exibida pelo aplicativo.
 
 ## Página Inicial/Lista de Ativos (RF-06)
@@ -75,5 +75,5 @@ Exibe a lista de todos os ativos disponíveis. Ele também usa a API CoinGecko p
   - filteredAssets: Esta é uma lista derivada que contém apenas os ativos cujo nome contém o valor atual de searchValue. Ela é calculada filtrando a lista completa de ativos sempre que searchValue ou assets são atualizados.
 
 - **Instruções de acesso**:
-  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/.
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/.
   - A lista de criptomoedas é exibida pelo aplicativo.
