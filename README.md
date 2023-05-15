@@ -22,16 +22,16 @@ Aplicativo de finanças que auxilia os investidores a monitorar seus investiment
 
 - Visualizar um Gráfico de Linha de Preço de uma Criptomoeda ao Longo do Tempo
 
-  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/nomedacriptomoeda ou selecione uma criptomoeda em https://investflow.github.io
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/nomedacriptomoeda ou selecione uma criptomoeda em https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
   - A tela de detalhes da criptomoeda é exibida pelo aplicativo.
 
 - Adicionar Ações à Lista de favoritos/watchlist
 
-  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/favorites ou clique no ícone de favoritos na Navbar.
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/favorites ou clique no ícone de favoritos na Navbar.
   - A tela de criptomoedas favoritas é exibida pelo aplicativo.
 
 - Página Inicial/Lista de Ativos
-  - Abra um navegador de Internet e informe a seguinte URL: https://investflow.github.io/.
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
   - A lista de criptomoedas é exibida pelo aplicativo.
 
 # Documentação
@@ -52,11 +52,11 @@ Aplicativo de finanças que auxilia os investidores a monitorar seus investiment
 
 # Hospedagem
 
-O site utiliza a plataforma do GitHub Pages como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
+O site utiliza a plataforma do Vercel como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
 
-https://investflow.github.io
+https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
 
-A publicação do site no GitHub Pages é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
+A publicação do site no Vercel é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
 
 # Armazenamento do Código-Fonte
 
