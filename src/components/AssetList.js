@@ -18,13 +18,15 @@ import {
 import { Star, StarBorder } from '@mui/icons-material';
 import Navbar from './Navbar';
 
-function AssetList() {
+function AssetList({ setShouldSearchWork, searchValue }) {
+
+  setShouldSearchWork(true);
+
   const [assets, setAssets] = useState([]);
   const [favorites, setFavorites] = useState(() => {
     const storedFavorites = localStorage.getItem('favorites');
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
-  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     async function fetchAssets() {
@@ -56,10 +58,6 @@ function AssetList() {
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
   };
 
-  const handleSearchChange = (value) => {
-    setSearchValue(value);
-  };
-
   const formatPercentage = (value) => {
     if (value === undefined) {
       return 'N/A';
@@ -73,7 +71,6 @@ function AssetList() {
 
   return (
     <div>
-      <Navbar onSearchChange={handleSearchChange} />
       <Box mt={2} ml={2}>
         <Typography variant="h4" gutterBottom>
           Lista de Criptoativos

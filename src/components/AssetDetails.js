@@ -29,7 +29,9 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function AssetDetails() {
+function AssetDetails({ setShouldSearchWork }) {
+  setShouldSearchWork(false);
+
   const { id } = useParams();
   const [asset, setAsset] = useState({});
   const [chartData, setChartData] = useState([]);
@@ -67,7 +69,7 @@ function AssetDetails() {
 
   return (
     <div>
-      <Navbar />
+      
       <div
         style={{
           marginTop: '1rem',

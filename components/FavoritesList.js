@@ -72,7 +72,7 @@ function FavoritesList() {
 
   return (
     <div>
-      <Navbar />
+      
       <Box mt={2} ml={2}>
         <Typography variant="h4" gutterBottom>
           Lista de Favoritos

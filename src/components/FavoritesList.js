@@ -18,7 +18,8 @@ import {
 import { Star, StarBorder } from '@mui/icons-material';
 import Navbar from './Navbar';
 
-function FavoritesList() {
+function FavoritesList({ setShouldSearchWork }) {
+  setShouldSearchWork(false);
   const [favorites, setFavorites] = useState([]);
   const [assets, setAssets] = useState([]);
 
@@ -72,7 +73,7 @@ function FavoritesList() {
 
   return (
     <div>
-      <Navbar />
+      
       <Box mt={2} ml={2}>
         <Typography variant="h4" gutterBottom>
           Lista de Favoritos

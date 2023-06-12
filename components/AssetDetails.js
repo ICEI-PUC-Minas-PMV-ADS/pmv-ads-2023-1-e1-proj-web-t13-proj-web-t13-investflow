@@ -67,7 +67,7 @@ function AssetDetails() {
 
   return (
     <div>
-      <Navbar />
+      
       <div
         style={{
           marginTop: '1rem',
