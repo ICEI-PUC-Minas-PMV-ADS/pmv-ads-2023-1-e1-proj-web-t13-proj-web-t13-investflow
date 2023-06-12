@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register({ setShouldSearchWork }) {
     setShouldSearchWork(false);
@@ -57,6 +57,14 @@ export default function Register({ setShouldSearchWork }) {
                             onChange={(e) => setPassword(e.target.value)}
                             value={password}
                         />
+
+                        <div style={{ margin: '1rem 0' }}>
+                            <input type="checkbox" name="termsAndConditions" id="termsAndConditions" />
+                            <label htmlFor="termsAndConditions">Li e estou de acordo com os <Link to={'/terms-and-conditions'}>termos de uso e política de privacidade</Link></label>
+
+                        </div>
+
+
                         <button type="submit" style={{ padding: "10px 16px", borderRadius: "2px", border: "solid 1px", marginBottom: "8px", cursor: "pointer" }}>Cadastrar</button>
                     </form>
                 </div>

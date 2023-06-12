@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Logout from './pages/Logout';
 import Navbar from './components/Navbar';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/login" element={<Login setShouldSearchWork={setShouldSearchWork} setIsUserLoggedIn={setIsUserLoggedIn} />} />
         <Route path="/register" element={<Register setShouldSearchWork={setShouldSearchWork} />} />
         <Route path="/logout" element={<Logout setShouldSearchWork={setShouldSearchWork} setIsUserLoggedIn={setIsUserLoggedIn} />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions setShouldSearchWork={setShouldSearchWork} />} />
       </Routes>
     </Router>
     </ThemeProvider>
