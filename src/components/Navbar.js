@@ -11,6 +11,8 @@ import {
   Button,
 } from '@mui/material';
 
+import logo from '../assets/logo.png';
+
 import { makeStyles } from '@mui/styles';
 
 import {
@@ -65,13 +67,14 @@ function Navbar({ onSearchChange, shouldSearchWork, isUserLoggedIn }) {
     <AppBar position="static">
       <Toolbar>
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Typography
+          {/* <Typography
             variant="h6"
             className={classes.logoText}
             style={{ flexGrow: 1 }}
           >
             Logo
-          </Typography>
+          </Typography> */}
+          <img src={logo} style={{ width: '180px' }} />
         </Link>
 
         <div style={{ flexGrow: 1 }} />
