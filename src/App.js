@@ -13,6 +13,8 @@ import Logout from './pages/Logout';
 import Navbar from './components/Navbar';
 import TermsAndConditions from './pages/TermsAndConditions';
 
+import { ToastContainer } from 'react-toastify';
+
 function App() {
 
   const theme = createTheme();
@@ -40,6 +42,7 @@ function App() {
         <Route path="/terms-and-conditions" element={<TermsAndConditions setShouldSearchWork={setShouldSearchWork} />} />
       </Routes>
     </Router>
+    <ToastContainer />
     </ThemeProvider>
   );
 }
