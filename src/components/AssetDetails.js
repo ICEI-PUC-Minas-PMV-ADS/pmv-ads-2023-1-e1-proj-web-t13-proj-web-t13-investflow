@@ -1,27 +1,31 @@
 // AssetDetails.js
 
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Label,
+  ResponsiveContainer,
+  AreaChart,
+  Area,
 } from 'recharts';
 import CoinGeckoAPI from '../services/CoinGeckoAPI';
-import Navbar from './Navbar';
-import { IconButton } from '@mui/material';
+import { Breadcrumbs, Container, IconButton, Typography } from '@mui/material';
 import { Star, StarBorder } from '@mui/icons-material';
 
 // This is the custom tooltip component
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom-tooltip">
-        <p className="label">{`Price : US$ ${payload[0].value.toFixed(2)}`}</p>
+      <div className="custom-tooltip" style={{ border: `solid 2px ${payload[0].color}`, padding: '8px 16px', backgroundColor: 'rgba(255, 255, 255, 0.6)' }}>
+        <p style={{ fontWeight: 'bold' }}>{payload[0].payload.time}</p>
+        <p className="label">
+          <span style={{ fontWeight: 'bold' }}>Price: </span>
+          {`${new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(payload[0].value)}`}
+        </p>
       </div>
     );
   }
@@ -35,27 +39,31 @@ function AssetDetails({ setShouldSearchWork }) {
   const { id } = useParams();
   const [asset, setAsset] = useState({});
   const [chartData, setChartData] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(() => {
+    const storedFavorites = localStorage.getItem('favorites') || [];
+    const doesFavoriteMatch = JSON.parse(storedFavorites).some(favorite => favorite.id === id);
+    return doesFavoriteMatch;
+  });
 
   useEffect(() => {
     async function fetchAsset() {
       const data = await CoinGeckoAPI.getAsset(id);
       setAsset(data);
+      setIsLoading(false);
     }
 
     async function fetchChartData() {
       const data = await CoinGeckoAPI.getAssetChartData(id, 'usd', 7);
       const formattedData = data.prices.map((entry) => {
         const date = new Date(entry[0]);
-        const formattedDate = `${date.getDate()}-${date.toLocaleString(
-          'en-US',
-          { month: 'short' }
-        )}`;
+
         return {
-          time: formattedDate,
-          price: entry[1],
+          time: date.toDateString(),
+          price: entry[1]
         };
       });
+
       setChartData(formattedData);
     }
 
@@ -68,52 +76,77 @@ function AssetDetails({ setShouldSearchWork }) {
   };
 
   return (
-    <div>
-      
-      <div
-        style={{
-          marginTop: '1rem',
-          marginLeft: '1rem',
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <h2>{asset.name}</h2>
-        <IconButton onClick={handleToggleFavorite}>
-          {isFavorite ? <Star style={{ color: 'yellow' }} /> : <StarBorder />}
-        </IconButton>
-      </div>
-      <LineChart
-        width={500}
-        height={300}
-        data={chartData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" />
-        <YAxis dataKey="price">
-          <Label
-            angle={-90}
-            value="Price (USD)"
-            position="insideLeft"
-            style={{ textAnchor: 'middle' }}
-          />
-        </YAxis>
-        <Tooltip content={<CustomTooltip />} />{' '}
-        {/* use the custom tooltip component */}
-        <Line
-          type="monotone"
-          dataKey="price"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
-    </div>
+    <>
+      {!isLoading && (
+        <Container maxWidth={"xl"} style={{ marginTop: "24px" }} >
+          <Breadcrumbs aria-label="breadcrumb" style={{ marginBottom: '16px' }}>
+            <Link underline="hover" style={{ textDecoration: 'none', color: "#0fa37f" }} color="inherit" to="/">
+              Home
+            </Link>
+            <Typography>{asset.name}</Typography>
+          </Breadcrumbs>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '22px'
+            }}
+          >
+            <img src={asset?.image?.thumb} alt={`${asset.id} logo`} style={{ width: '28px', marginRight: '8px' }} />
+            <Typography variant='h2' fontSize={30} fontWeight={700} >{asset.name}</Typography>
+            <Typography variant='span' color={'#868686'} fontSize={30} fontWeight={700} marginLeft={'8px'}>{asset?.symbol?.toUpperCase()}</Typography>
+            <IconButton onClick={handleToggleFavorite}>
+              {isFavorite ? <Star style={{ color: '#ffd416' }} /> : <StarBorder />}
+            </IconButton>
+          </div>
+
+          <div style={{ padding: '30px', border: 'solid 2px #000', borderRadius: '4px' }}>
+            <Typography variant='h3' fontSize={30} fontWeight={700}>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(asset?.market_data?.current_price?.usd)}</Typography>
+            <span style={{ display: 'block', height: '3px', width: '100%', maxWidth: '120px', background: '#000', margin: '25px 0' }}></span>
+            <div style={{ width: '100%', height: '400px' }}>
+              <ResponsiveContainer>
+                <AreaChart
+                  width={500}
+                  height={400}
+                  data={chartData}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  {/* <XAxis dataKey="time" /> */}
+                  <YAxis dataKey="price">
+                    <Label
+                      angle={-90}
+                      value="Price (USD)"
+                      position="insideLeft"
+                      style={{ textAnchor: 'middle' }}
+                    />
+                  </YAxis>
+                  <Tooltip content={<CustomTooltip />} />{' '}
+                  {/* use the custom tooltip component */}
+
+                  <defs>
+                    <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#e3f2d8" stopOpacity={0.8} />
+                      <stop offset="95%" stopColor="#e3f2d8" stopOpacity={0} />
+                    </linearGradient>
+                  </defs>
+
+
+                  <Area
+                    type="monotone"
+                    dataKey="price"
+                    stroke="#10b980"
+                    fillOpacity={1}
+                    fill="url(#colorPrice)"
+                    activeDot={{ r: 8 }}
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+
+          </div>
+        </Container>
+      )}
+    </>
   );
 }
 

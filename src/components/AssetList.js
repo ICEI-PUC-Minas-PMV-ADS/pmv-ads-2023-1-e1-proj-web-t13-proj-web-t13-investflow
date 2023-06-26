@@ -1,22 +1,14 @@
 // AssetList.js
 
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import CoinGeckoAPI from '../services/CoinGeckoAPI';
 import {
-  Box,
-  Paper,
   Typography,
-  Table,
-  TableContainer,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  IconButton,
+  Container,
 } from '@mui/material';
-import { Star, StarBorder } from '@mui/icons-material';
-import Navbar from './Navbar';
+import { makeStyles } from '@mui/styles';
+import AssetTable from './AssetTable';
 
 function AssetList({ setShouldSearchWork, searchValue }) {
 
@@ -31,12 +23,15 @@ function AssetList({ setShouldSearchWork, searchValue }) {
   useEffect(() => {
     async function fetchAssets() {
       const data = await CoinGeckoAPI.getAssets();
+      console.log(data)
       const formattedData = data.map((asset) => ({
         id: asset.id,
         name: asset.name,
+        logo: asset.image,
+        symbol: asset.symbol,
         price: asset.current_price,
         oneHourChange: asset.price_change_percentage_1h_in_currency,
-        twentyFourHourChange: asset.price_change_percentage_24h_in_currency,
+        twentyFourHourChange: asset.price_change_percentage_24h,
         sevenDayChange: asset.price_change_percentage_7d_in_currency,
         isFavorite: favorites.some((favorite) => favorite.id === asset.id),
       }));
@@ -58,78 +53,27 @@ function AssetList({ setShouldSearchWork, searchValue }) {
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
   };
 
-  const formatPercentage = (value) => {
-    if (value === undefined) {
-      return 'N/A';
-    }
-    return value.toFixed(2) + '%';
-  };
-
   const filteredAssets = assets.filter((asset) =>
     asset.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  const useStyles = makeStyles(theme => ({
+    container: {
+      marginTop: theme.spacing(3),
+    }
+  }));
+
+  const classes = useStyles();
+
   return (
     <div>
-      <Box mt={2} ml={2}>
-        <Typography variant="h4" gutterBottom>
-          Lista de Criptoativos
+      <Container maxWidth={"xl"} className={classes.container} >
+        <Typography variant="h1" fontSize={30} fontWeight={700} marginBottom={"8px"}>
+          Preço dos ativos por Market Cap
         </Typography>
-        <Paper elevation={3}>
-          <TableContainer component={Paper} elevation={3}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>#</TableCell>
-                  <TableCell>Moeda</TableCell>
-                  <TableCell>Preço</TableCell>
-                  <TableCell>1 h</TableCell>
-                  <TableCell>24 h</TableCell>
-                  <TableCell>7 d</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {filteredAssets.map((asset) => {
-                  return (
-                    <TableRow key={asset.id}>
-                      <TableCell>
-                        <IconButton
-                          onClick={() => toggleFavorite(asset)}
-                          color="inherit"
-                        >
-                          {asset.isFavorite ? (
-                            <Star style={{ color: 'yellow', marginTop: 4 }} />
-                          ) : (
-                            <StarBorder />
-                          )}
-                        </IconButton>
-                      </TableCell>
-                      <TableCell>
-                        <Link
-                          to={`/asset/${asset.id}`}
-                          style={{ textDecoration: 'none', color: 'inherit' }}
-                        >
-                          {asset.name}
-                        </Link>
-                      </TableCell>
-                      <TableCell>US$ {asset.price.toFixed(2)}</TableCell>
-                      <TableCell>
-                        {formatPercentage(asset.oneHourChange)}
-                      </TableCell>
-                      <TableCell>
-                        {formatPercentage(asset.twentyFourHourChange)}
-                      </TableCell>
-                      <TableCell>
-                        {formatPercentage(asset.sevenDayChange)}
-                      </TableCell>
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
-      </Box>
+        <Typography variant='h2' fontSize={18} marginBottom={"20px"}>A capitalização global de mercado para criptomoedas no dia de hoje é de $1 bilhão.</Typography>
+        <AssetTable data={filteredAssets} toggleFavorite={toggleFavorite} />
+      </Container>
     </div>
   );
 }

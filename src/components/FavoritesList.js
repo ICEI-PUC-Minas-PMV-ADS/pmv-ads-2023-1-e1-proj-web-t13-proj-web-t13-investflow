@@ -14,9 +14,11 @@ import {
   TableRow,
   TableCell,
   IconButton,
+  Container,
 } from '@mui/material';
 import { Star, StarBorder } from '@mui/icons-material';
 import Navbar from './Navbar';
+import AssetTable from './AssetTable';
 
 function FavoritesList({ setShouldSearchWork }) {
   setShouldSearchWork(false);
@@ -36,9 +38,11 @@ function FavoritesList({ setShouldSearchWork }) {
       const formattedData = data.map((asset) => ({
         id: asset.id,
         name: asset.name,
+        logo: asset.image,
+        symbol: asset.symbol,
         price: asset.current_price,
         oneHourChange: asset.price_change_percentage_1h_in_currency,
-        twentyFourHourChange: asset.price_change_percentage_24h_in_currency,
+        twentyFourHourChange: asset.price_change_percentage_24h,
         sevenDayChange: asset.price_change_percentage_7d_in_currency,
         isFavorite: favorites.some((favorite) => favorite.id === asset.id),
       }));
@@ -60,80 +64,19 @@ function FavoritesList({ setShouldSearchWork }) {
     localStorage.setItem('favorites', JSON.stringify(newFavorites));
   };
 
-  const formatPercentage = (value) => {
-    if (value === undefined) {
-      return 'N/A';
-    }
-    return value.toFixed(2) + '%';
-  };
-
   const favoriteAssets = assets.filter((asset) =>
     favorites.some((favorite) => favorite.id === asset.id)
   );
 
   return (
-    <div>
-      
-      <Box mt={2} ml={2}>
-        <Typography variant="h4" gutterBottom>
-          Lista de Favoritos
-        </Typography>
-        <Paper elevation={3}>
-          <TableContainer component={Paper} elevation={3}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>#</TableCell>
-                  <TableCell>Moeda</TableCell>
-                  <TableCell>Preço</TableCell>
-                  <TableCell>1 h</TableCell>
-                  <TableCell>24 h</TableCell>
-                  <TableCell>7 d</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {favoriteAssets.map((asset) => {
-                  return (
-                    <TableRow key={asset.id}>
-                      <TableCell>
-                        <IconButton
-                          onClick={() => toggleFavorite(asset)}
-                          color="inherit"
-                        >
-                          {asset.isFavorite ? (
-                            <Star style={{ color: 'yellow', marginTop: 4 }} />
-                          ) : (
-                            <StarBorder />
-                          )}
-                        </IconButton>
-                      </TableCell>
-                      <TableCell>
-                        <Link
-                          to={`/asset/${asset.id}`}
-                          style={{ textDecoration: 'none', color: 'inherit' }}
-                        >
-                          {asset.name}
-                        </Link>
-                      </TableCell>
-                      <TableCell>US$ {asset.price.toFixed(2)}</TableCell>
-                      <TableCell>
-                        {formatPercentage(asset.oneHourChange)}
-                      </TableCell>
-                      <TableCell>
-                        {formatPercentage(asset.twentyFourHourChange)}
-                      </TableCell>
-                      <TableCell>
-                        {formatPercentage(asset.sevenDayChange)}
-                      </TableCell>
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
-      </Box>
-    </div>
+
+    <Container maxWidth={"xl"} style={{ marginTop: "24px" }} >
+      <Typography variant="h1" fontSize={30} fontWeight={700} marginBottom={"8px"}>
+        Lista de Favoritos
+      </Typography>
+
+      <AssetTable data={favoriteAssets} toggleFavorite={toggleFavorite} />
+    </Container>
   );
 }
 

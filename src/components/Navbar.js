@@ -2,36 +2,63 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  AppBar,
-  Toolbar,
   IconButton,
-  Typography,
   InputBase,
-  Badge,
   Button,
+  Box,
+  Container,
+  InputAdornment,
 } from '@mui/material';
 
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 
 import { makeStyles } from '@mui/styles';
 
 import {
-  Favorite,
   Search,
-  Brightness4,
-  AccountCircle,
+  DarkModeOutlined,
+  StarBorderPurple500Outlined,
 } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    alignItems: "center",
+    marginTop: theme.spacing(3),
+    display: "flex !important",
+    justifyContent: "space-between"
+  },
+
   loginButton: {
-    color: 'white',
-    backgroundColor: '#4caf50',
-    marginLeft: theme.spacing(1),
+    color: '#000 !important',
+    backgroundColor: 'transparent',
+    boxShadow: "none",
+    marginRight: theme.spacing(1),
+    padding: '6px 24px',
+    borderRadius: '4px',
+    borderColor: '#c2c8d0',
+    textTransform: 'capitalize',
+    transition: 'background-color 0.2s',
+    "&:hover": {
+      backgroundColor: 'rgba(0, 0, 0, 0.1)',
+      borderColor: '#c2c8d0',
+    }
+
   },
   registerButton: {
     color: 'white',
     backgroundColor: '#4caf50',
-    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(2),
+    padding: '6px 24px',
+    backgroundColor: '#0fa37f',
+    borderRadius: '4px',
+    boxShadow: 'none',
+    textTransform: 'capitalize',
+    transition: 'filter 0.2s',
+    "&:hover": {
+      backgroundColor: '#0fa37f',
+      boxShadow: 'none',
+      filter: 'brightness(0.9)'
+    }
   },
   searchInput: {
     backgroundColor: 'white',
@@ -50,10 +77,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 function Navbar({ onSearchChange, shouldSearchWork, isUserLoggedIn }) {
   const [searchValue, setSearchValue] = useState('');
-
-  const userInformation = localStorage.getItem("userInformation");
 
   const classes = useStyles();
   const navigate = useNavigate();
@@ -64,88 +90,93 @@ function Navbar({ onSearchChange, shouldSearchWork, isUserLoggedIn }) {
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar>
+    <Box>
+      <Container maxWidth={"xl"} className={classes.container}>
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          {/* <Typography
-            variant="h6"
-            className={classes.logoText}
-            style={{ flexGrow: 1 }}
-          >
-            Logo
-          </Typography> */}
           <img src={logo} style={{ width: '180px' }} />
         </Link>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end" }}>
+          <div>
 
-        <div style={{ flexGrow: 1 }} />
+            {isUserLoggedIn ? (
 
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <IconButton color="inherit" component={Link} to="/favorites">
-            <Badge color="secondary" variant="dot">
-              <Favorite />
-            </Badge>
-          </IconButton>
-          {isUserLoggedIn ? (
-
-            <Button
-              color="inherit"
-              variant="contained"
-              onClick={() => navigate("/logout")}
-              className={classes.loginButton}
-              style={{ backgroundColor: '#4caf50', marginRight: ".5rem" }}
-            >
-              <span style={{ color: 'white' }}>Logout</span>
-            </Button>
-
-          ) : (
-            <>
               <Button
                 color="inherit"
                 variant="contained"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/logout")}
                 className={classes.loginButton}
-                style={{ backgroundColor: '#4caf50' }}
+                style={{ backgroundColor: '#4caf50', marginRight: ".5rem" }}
               >
-                <span style={{ color: 'white' }}>Login</span>
+                <span style={{ color: 'white' }}>Logout</span>
               </Button>
-              <Button
-                color="inherit"
-                variant="contained"
-                onClick={() => navigate("/register")}
-                className={classes.registerButton}
-                style={{
-                  backgroundColor: '#4caf50',
-                  marginLeft: '5px',
-                  marginRight: '10px',
-                }}
-              >
-                <span style={{ color: 'white' }}>Cadastro</span>
-              </Button>
-            </>
-          )}
-          { shouldSearchWork && (
-            <div className={classes.searchInput}>
-              <IconButton className={classes.searchIcon} color="inherit">
-                <Search />
+
+            ) : (
+              <>
+                <Button
+                  variant="outlined"
+                  onClick={() => navigate("/login")}
+                  className={classes.loginButton}
+                >
+                  <span>Login</span>
+                </Button>
+                <Button
+                  color="inherit"
+                  variant="contained"
+                  onClick={() => navigate("/register")}
+                  className={classes.registerButton}
+                >
+                  <span style={{ color: 'white' }}>Cadastro</span>
+                </Button>
+              </>
+            )}
+
+            <IconButton color="inherit">
+              <DarkModeOutlined color='#000' />
+            </IconButton>
+
+          </div>
+          <div style={{ display: "flex", marginTop: "16px", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", marginRight: "8px" }}>
+              <IconButton color="inherit" component={Link} to="/favorites" style={{ fontSize: "16px", borderRadius: "8px" }}>
+                <StarBorderPurple500Outlined />
+                <span style={{ marginLeft: "4px" }}>Watchlist</span>
               </IconButton>
-              <InputBase
-                placeholder="Buscar"
-                inputProps={{ 'aria-label': 'search' }}
-                style={{
-                  flex: 1,
-                  marginLeft: '5px',
-                }}
-                onChange={handleSearchChange}
-                value={searchValue}
-              />
+
+
             </div>
-          )}
-          <IconButton color="inherit" disabled>
-            <Brightness4 />
-          </IconButton>
+
+            {shouldSearchWork && (
+              <div className={classes.searchInput}>
+                <InputBase
+                  placeholder="Procurar"
+                  startAdornment={
+                    <InputAdornment style={{ marginRight: "4px" }}>
+                      <Search />
+                    </InputAdornment>
+                  }
+                  inputProps={{ 'aria-label': 'search' }}
+                  style={{
+                    // flex: 1,
+                    border: "solid 1px #000",
+                    borderRadius: "8px",
+                    padding: "2px 14px"
+
+                  }}
+                  onChange={handleSearchChange}
+                  value={searchValue}
+                />
+              </div>
+            )}
+
+
+
+
+          </div>
+
         </div>
-      </Toolbar>
-    </AppBar>
+
+      </Container>
+    </Box>
   );
 }
 

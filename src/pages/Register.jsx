@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
+import { Typography } from "@mui/material";
 
 export default function Register({ setShouldSearchWork }) {
     setShouldSearchWork(false);
@@ -27,14 +28,23 @@ export default function Register({ setShouldSearchWork }) {
     return (
         <div>
             
-            <div style={{ display: "flex", height: "calc(100vh - 64px)", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ maxWidth: "450px", width: "100%", padding: "20px 20px 40px", border: "solid 1px", borderRadius: "6px" }}>
-                    <h1 style={{ textAlign: "center" }}>Cadastrar</h1>
+            <div style={{ display: "flex", height: "calc(100vh - 64px)", alignItems: "flex-start", justifyContent: "center" }}>
+                <div style={{ maxWidth: "400px", width: "100%", padding: "40px", marginTop: '60px' }}>
+                    <Typography 
+                        variant="h1" 
+                        fontSize={'32px'} 
+                        lineHeight={'1.5'} 
+                        textAlign={'center'} 
+                        fontWeight={'700'}
+                         marginBottom={'24px'}
+                    >
+                        Crie sua conta
+                    </Typography>
                     <form style={{ display: "flex", flexDirection: "column" }} onSubmit={handleSubmit}>
                         <input 
                             type="text" 
                             placeholder="Nome" 
-                            style={{ padding: "10px 16px", borderRadius: "2px", border: "solid 1px", marginBottom: "8px" }}
+                            style={{ padding: "16px", borderRadius: "3px", fontSize: '16px', border: "solid 1px #c2c8d0", marginBottom: "8px" }}
                             onChange={(e) => setName(e.target.value)}
                             value={name}
                         />
@@ -43,7 +53,7 @@ export default function Register({ setShouldSearchWork }) {
                             type="email" 
                             name="email" 
                             placeholder="Email" 
-                            style={{ padding: "10px 16px", borderRadius: "2px", border: "solid 1px", marginBottom: "8px" }} 
+                            style={{ padding: "16px", borderRadius: "3px", fontSize: '16px', border: "solid 1px #c2c8d0", marginBottom: "8px" }} 
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                         />
@@ -53,20 +63,28 @@ export default function Register({ setShouldSearchWork }) {
                             name="password" 
                             id="password" 
                             placeholder="Senha" 
-                            style={{ padding: "10px 16px", borderRadius: "2px", border: "solid 1px", marginBottom: "8px" }}
+                            style={{ padding: "16px", borderRadius: "3px", fontSize: '16px', border: "solid 1px #c2c8d0", marginBottom: "8px" }}
                             onChange={(e) => setPassword(e.target.value)}
                             value={password}
                         />
 
                         <div style={{ margin: '1rem 0' }}>
                             <input type="checkbox" name="termsAndConditions" id="termsAndConditions" />
-                            <label htmlFor="termsAndConditions">Li e estou de acordo com os <Link to={'/terms-and-conditions'}>termos de uso e política de privacidade</Link></label>
+                            <label htmlFor="termsAndConditions" style={{ marginLeft: '8px', fontSize: '14px', marginTop: '18px' }}>
+                                Li e estou de acordo com os 
+                                <Link style={{ color: '#0fa37f', marginLeft: '4px' }} to={'/terms-and-conditions'}>termos de uso e política de privacidade</Link>
+                            </label>
 
                         </div>
 
 
-                        <button type="submit" style={{ padding: "10px 16px", borderRadius: "2px", border: "solid 1px", marginBottom: "8px", cursor: "pointer" }}>Cadastrar</button>
+                        <button type="submit" style={{ padding: "16px", borderRadius: "3px", fontSize: '16px', border: "none", cursor: "pointer", background: '#0fa37f', color: '#FFF' }}>Cadastrar</button>
                     </form>
+
+                    <p style={{ textAlign: 'center', fontSize: '14px', marginTop: '18px' }}>
+                        Já tem uma conta? 
+                        <Link style={{ color: '#0fa37f', marginLeft: '4px' }} to="/register">Faça o login aqui</Link>
+                    </p>
                 </div>
             </div>
         </div>
