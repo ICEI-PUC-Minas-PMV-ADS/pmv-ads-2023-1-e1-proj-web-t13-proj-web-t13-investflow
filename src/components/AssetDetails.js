@@ -41,8 +41,9 @@ function AssetDetails({ setShouldSearchWork }) {
   const [chartData, setChartData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(() => {
-    const storedFavorites = localStorage.getItem('favorites') || [];
-    const doesFavoriteMatch = JSON.parse(storedFavorites).some(favorite => favorite.id === id);
+    const storedFavorites = localStorage.getItem('favorites');
+    const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+    const doesFavoriteMatch = parsedFavorites.some(favorite => favorite.id === id);
     return doesFavoriteMatch;
   });
 
