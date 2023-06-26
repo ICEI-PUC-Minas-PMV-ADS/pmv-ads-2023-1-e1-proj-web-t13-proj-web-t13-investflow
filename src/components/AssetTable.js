@@ -13,7 +13,7 @@ export default function AssetTable({ data, toggleFavorite }) {
                         <TableCell align='right' width={"1%"} sx={{ border: 'none' }}>Preço</TableCell>
                         {/* <TableCell sx={{ border: 'none' }}>1 h</TableCell> */}
                         <TableCell sx={{ border: 'none' }}>24 h</TableCell>
-                        <TableCell sx={{ border: 'none' }} width={"15%"} align="center">Alerta de Preço</TableCell>
+                        <TableCell sx={{ border: 'none', minWidth: '200px' }} width={"15%"}  align="center">Alerta de Preço</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

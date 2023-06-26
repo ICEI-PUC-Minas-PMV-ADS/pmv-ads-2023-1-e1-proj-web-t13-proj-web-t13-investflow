@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { toast } from 'react-toastify';
 
 export default function Login({ setShouldSearchWork, setIsUserLoggedIn }) {
     setShouldSearchWork(false);
@@ -16,14 +16,51 @@ export default function Login({ setShouldSearchWork, setIsUserLoggedIn }) {
         const userInformation = JSON.parse(localStorage.getItem("userInformation"));
 
         if (!userInformation) {
-            navigate("/register");
+
+            toast.error("Ops! Essa conta não existe. Faça um cadastro e aproveite!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                toastId: 'success1'
+             });
+            
+            return navigate("/register");
         }
 
         if (userInformation.email !== email || userInformation.password !== password) {
-            navigate("/register");
+            toast.error("Email e/ou senha estão incorretos. Por favor, tente novamente.", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                toastId: 'success1'
+             });
+
+            return navigate("/register");
         }
 
         setIsUserLoggedIn(true);
+
+        toast.success("Login realizado com sucesso!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            toastId: 'success1'
+        });
 
         navigate("/");
     }

@@ -25,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: theme.spacing(3),
     display: "flex !important",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
   },
 
   loginButton: {
@@ -47,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   registerButton: {
     color: 'white',
     backgroundColor: '#4caf50',
-    marginRight: theme.spacing(2),
+    // marginRight: theme.spacing(2),
     padding: '6px 24px',
     backgroundColor: '#0fa37f',
     borderRadius: '4px',
@@ -75,6 +79,19 @@ const useStyles = makeStyles((theme) => ({
   logoText: {
     fontFamily: 'Roboto',
   },
+  logo: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '16px'
+    }
+  },
+  actionContainer: {
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: "flex-end",
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center'
+    }
+  }
 }));
 
 
@@ -93,9 +110,9 @@ function Navbar({ onSearchChange, shouldSearchWork, isUserLoggedIn }) {
     <Box>
       <Container maxWidth={"xl"} className={classes.container}>
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img src={logo} style={{ width: '180px' }} />
+          <img src={logo} style={{ width: '180px' }} className={classes.logo} />
         </Link>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: "flex-end" }}>
+        <div className={classes.actionContainer} style={{ }}>
           <div>
 
             {isUserLoggedIn ? (
@@ -130,9 +147,9 @@ function Navbar({ onSearchChange, shouldSearchWork, isUserLoggedIn }) {
               </>
             )}
 
-            <IconButton color="inherit">
+            {/* <IconButton color="inherit">
               <DarkModeOutlined color='#000' />
-            </IconButton>
+            </IconButton> */}
 
           </div>
           <div style={{ display: "flex", marginTop: "16px", alignItems: "center" }}>

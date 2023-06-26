@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
+
+import { toast } from 'react-toastify';
 
 export default function Register({ setShouldSearchWork }) {
     setShouldSearchWork(false);
@@ -21,6 +22,18 @@ export default function Register({ setShouldSearchWork }) {
         }
 
         localStorage.setItem("userInformation", JSON.stringify(userInformation));
+
+        toast.success("Conta criada com sucesso! Por favor, realize o seu login.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            toastId: 'success1'
+        });
 
         navigate("/login");
     }
@@ -83,7 +96,7 @@ export default function Register({ setShouldSearchWork }) {
 
                     <p style={{ textAlign: 'center', fontSize: '14px', marginTop: '18px' }}>
                         Já tem uma conta? 
-                        <Link style={{ color: '#0fa37f', marginLeft: '4px' }} to="/register">Faça o login aqui</Link>
+                        <Link style={{ color: '#0fa37f', marginLeft: '4px' }} to="/login">Faça o login aqui</Link>
                     </p>
                 </div>
             </div>
