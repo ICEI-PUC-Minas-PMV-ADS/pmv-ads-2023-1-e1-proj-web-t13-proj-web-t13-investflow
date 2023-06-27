@@ -52,9 +52,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-008| O aplicativo deve permitir que o usuário possa criar alertas a partir da sua lista de favoritos/ watchlist. | MEDIA |
 |RF-009| O aplicativo deve permitir que o usuário possa criar alertas a partir da Homepage | BAIXA |
 |RF-010| O aplicativo deve permitir que os usuários pesquisem ações específicas em um campo de busca, inserindo o nome ou símbolo da ação. | ALTA |
-|RF-011| O site deve permitir que o usuário altere a visualização dos ativos na homepage entre lista e grade. | BAIXA |
-|RF-012| O site deve permitir que o usuário alterne o modo de visualização entre Light Mode e Dark Mode. | BAIXA |
-
 
 ### Requisitos não Funcionais
 
