@@ -22,16 +22,16 @@ Aplicativo de finanças que auxilia os investidores a monitorar seus investiment
 
 - Visualizar um Gráfico de Linha de Preço de uma Criptomoeda ao Longo do Tempo
 
-  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/nomedacriptomoeda ou selecione uma criptomoeda em https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investflow.vercel.app/asset/{NomeDaCriptomoeda} ou selecione uma criptomoeda em https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investflow.vercel.app/.
   - A tela de detalhes da criptomoeda é exibida pelo aplicativo.
 
 - Adicionar Ações à Lista de favoritos/watchlist
 
-  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/favorites ou clique no ícone de favoritos na Navbar.
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investflow.vercel.app/favorites ou clique no ícone de favoritos na Navbar.
   - A tela de criptomoedas favoritas é exibida pelo aplicativo.
 
 - Página Inicial/Lista de Ativos
-  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
+  - Abra um navegador de Internet e informe a seguinte URL: https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investflow.vercel.app/
   - A lista de criptomoedas é exibida pelo aplicativo.
 
 # Documentação
