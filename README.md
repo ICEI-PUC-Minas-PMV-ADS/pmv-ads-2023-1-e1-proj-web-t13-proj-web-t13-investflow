@@ -54,7 +54,7 @@ Aplicativo de finanças que auxilia os investidores a monitorar seus investiment
 
 O site utiliza a plataforma do Vercel como ambiente de hospedagem do site do projeto. O site é mantido no ambiente da URL:
 
-https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investfl-5c0lm070m.vercel.app/
+https://pmv-ads-2023-1-e1-proj-web-t13-proj-web-t13-investflow.vercel.app/
 
 A publicação do site no Vercel é feita por meio de uma submissão do projeto (push) via git para o repositório remoto que se encontra no endereço.
 
